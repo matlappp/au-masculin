@@ -1,0 +1,13 @@
+{
+	"name": "Au masculin — clinique d'esthétique masculine",
+	"short_name": "Au masculin",
+	"description": "Hormonothérapie, restauration capillaire et médecine esthétique pour homme, à Montréal.",
+	"lang": "fr-CA",
+	"start_url": "/",
+	"display": "standalone",
+	"background_color": "#0B0C0E",
+	"theme_color": "#0B0C0E",
+	"icons": [
+		{ "src": "/assets/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+	]
+}

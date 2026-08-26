@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# iCloud
+*.icloud
+
+# Notes de travail internes (brief client, non destinées au dépôt)
+infos.txt
+CLAUDE.md
