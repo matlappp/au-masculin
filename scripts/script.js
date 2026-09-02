@@ -216,6 +216,64 @@
 		});
 	}
 
+	/* ---- Carrousel du héros ----
+	   Défilement automatique des visuels, mise en pause au survol
+	   et au focus. Sans JS, la première image reste affichée. */
+	var slider = document.querySelector('[data-slider]');
+
+	if (slider) {
+		var slides = Array.prototype.slice.call(slider.querySelectorAll('.hero-slide'));
+		var dotsWrap = slider.querySelector('.hero-dots');
+		var index = 0;
+		var timer = null;
+		var delay = 5200;
+
+		if (slides.length) {
+			var show = function (i) {
+				index = (i + slides.length) % slides.length;
+				slides.forEach(function (slide, n) {
+					slide.classList.toggle('is-active', n === index);
+				});
+				if (dotsWrap) {
+					Array.prototype.forEach.call(dotsWrap.children, function (dot, n) {
+						dot.setAttribute('aria-current', n === index ? 'true' : 'false');
+					});
+				}
+			};
+
+			if (dotsWrap) {
+				slides.forEach(function (slide, n) {
+					var dot = document.createElement('button');
+					dot.type = 'button';
+					dot.setAttribute('aria-label', 'Visuel ' + (n + 1));
+					dot.addEventListener('click', function () {
+						show(n);
+						restart();
+					});
+					dotsWrap.appendChild(dot);
+				});
+			}
+
+			var stop = function () { window.clearInterval(timer); };
+			var start = function () {
+				if (reduced || slides.length < 2) return;
+				timer = window.setInterval(function () { show(index + 1); }, delay);
+			};
+			var restart = function () { stop(); start(); };
+
+			slider.addEventListener('mouseenter', stop);
+			slider.addEventListener('mouseleave', start);
+			slider.addEventListener('focusin', stop);
+			slider.addEventListener('focusout', start);
+			document.addEventListener('visibilitychange', function () {
+				if (document.hidden) { stop(); } else { start(); }
+			});
+
+			show(0);
+			start();
+		}
+	}
+
 	/* ---- Année courante dans le pied de page ---- */
 	Array.prototype.forEach.call(document.querySelectorAll('[data-year]'), function (el) {
 		el.textContent = new Date().getFullYear();

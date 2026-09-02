@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 136 104" role="img" aria-label="Au masculin">
+	<!-- Monogramme AM : le A et le M partagent la même diagonale.
+	     Fond transparent, dégradé or. -->
+	<defs>
+		<linearGradient id="or-am" x1="0" y1="0" x2="1" y2="1">
+			<stop offset="0" stop-color="#D8B268"/>
+			<stop offset=".45" stop-color="#B08D3E"/>
+			<stop offset="1" stop-color="#8A6A1F"/>
+		</linearGradient>
+	</defs>
+	<g fill="none" stroke="url(#or-am)" stroke-width="3.4" stroke-linecap="butt" stroke-linejoin="miter">
+		<!-- A -->
+		<path d="M6 97 L40 7 L74 97"/>
+		<path d="M21 66 L57 66"/>
+		<!-- M : départ sur la diagonale du A -->
+		<path d="M46 22 L88 71 L118 7 L129 97"/>
+	</g>
+</svg>

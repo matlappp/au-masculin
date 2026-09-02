@@ -7,14 +7,14 @@
 	<meta name="description" content="Rencontrez l'équipe de la clinique Au masculin : Dr George Kannab-Ayda (hormonothérapie), Dr Juan Camilo Gomez-Izquierdo (greffe capillaire) et Martine Fortier, infirmière injectrice.">
 	<meta name="author" content="Matlap Design">
 	<meta name="robots" content="index, follow">
-	<meta name="theme-color" content="#0B0C0E">
+	<meta name="theme-color" content="#FAF8F4">
 	<meta property="og:locale" content="fr_CA">
 	<meta property="og:site_name" content="Au masculin">
 	<meta property="og:type" content="article">
 	<meta property="og:url" content="https://www.aumasculin.ca/equipe.html">
 	<meta property="og:title" content="L'équipe médicale | Au masculin — Montréal">
 	<meta property="og:description" content="Rencontrez l'équipe de la clinique Au masculin : Dr George Kannab-Ayda (hormonothérapie), Dr Juan Camilo Gomez-Izquierdo (greffe capillaire) et Martine Fortier, infirmière injectrice.">
-	<meta property="og:image" content="https://www.aumasculin.ca/assets/og-cover.svg">
+	<meta property="og:image" content="https://www.aumasculin.ca/assets/og-cover.jpg">
 	<meta name="twitter:card" content="summary_large_image">
 	<link rel="canonical" href="https://www.aumasculin.ca/equipe.html">
 	<link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
@@ -36,7 +36,13 @@
 				"@type": "Physician",
 				"name": "Dr George Kannab-Ayda",
 				"jobTitle": "Médecin et pédiatre — médecine esthétique",
-				"medicalSpecialty": "Endocrine",
+				"openingHoursSpecification": {
+			"@type": "OpeningHoursSpecification",
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+			"opens": "09:00",
+			"closes": "17:00"
+		},
+		"medicalSpecialty": "Endocrine",
 				"worksFor": {
 					"@type": "MedicalClinic",
 					"name": "Au masculin"
@@ -81,7 +87,10 @@
 	<!-- ============ EN-TÊTE ============ -->
 	<header class="site-header">
 		<div class="wrap header-inner">
-			<a href="./index.html" class="brand" aria-label="Au masculin — accueil">Au <em>masculin</em></a>
+			<a href="./index.html" class="brand" aria-label="Au masculin — accueil">
+				<img class="brand-mark" src="./assets/logo-am.svg" alt="" width="136" height="104">
+				<span class="brand-word">Au masculin<small>Clinique médico-esthétique</small></span>
+			</a>
 
 			<nav aria-label="Navigation principale">
 				<ul class="nav">
@@ -104,8 +113,7 @@
 			</nav>
 
 			<div class="header-cta">
-				<!-- TÉLÉPHONE À CONFIRMER -->
-				<a class="header-tel" href="tel:+15140000000">514&nbsp;000-0000</a>
+				<a class="header-tel" href="tel:+15148878877">514&nbsp;887-8877</a>
 				<a class="btn btn--sm" href="./contact.html">Prendre rendez-vous</a>
 				<button class="burger" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Ouvrir le menu">
 					<span></span><span></span><span></span>
@@ -131,7 +139,7 @@
 		</ul>
 		<div class="drawer-foot">
 			<a class="btn" href="./contact.html">Prendre rendez-vous</a>
-			<a class="header-tel" href="tel:+15140000000">514 000-0000</a>
+			<a class="header-tel" href="tel:+15148878877">514 887-8877</a>
 		</div>
 	</div>
 
@@ -150,7 +158,7 @@
 					<div>
 						<p class="eyebrow">La clinique</p>
 						<h1 class="h-lg">L'<em>équipe</em></h1>
-						<p class="lead">Trois professionnels, trois expertises complémentaires. Un principe commun : on évalue avant de traiter, et on dit non quand il faut dire non.</p>
+						<p class="lead">Quatre professionnels, quatre expertises complémentaires. Un principe commun : on évalue avant de traiter, et on dit non quand il faut dire non.</p>
 						<div class="btn-row mt-3">
 							<a class="btn" href="./contact.html">Prendre rendez-vous</a>
 						</div>
@@ -165,12 +173,41 @@
 			</div>
 		</section>
 
-		<!-- ============ DR KANNAB-AYDA ============ -->
+		<!-- ============ DR LAPOINTE ============ -->
 		<section class="section">
 			<div class="wrap">
 				<div class="split">
 					<div class="split-media reveal">
-						<img src="./assets/equipe-kannab.svg" alt="Dr George Kannab-Ayda" width="900" height="1200">
+						<img src="./assets/equipe-lapointe.jpg" alt="Dr Patrick Lapointe, directeur médical" width="600" height="800">
+					</div>
+					<div class="split-body reveal">
+						<p class="eyebrow">Direction médicale</p>
+						<h2 class="h-md">Dr Patrick<br>Lapointe</h2>
+						<p class="role-line">Directeur médical — médecine médico-esthétique</p>
+
+						<p class="mt-2">Dr Patrick Lapointe assure la direction médicale de la clinique. Il exerce en médecine médico-esthétique et veille à la cohérence des parcours offerts : indications, protocoles, encadrement des traitements et qualité du suivi.</p>
+						<p>C'est lui qui s'assure qu'un traitement n'est proposé que lorsqu'il est réellement indiqué — et que chaque patient reçoit l'information nécessaire pour décider en connaissance de cause.</p>
+
+						<div class="member-tags">
+							<span class="tag">Médecin</span>
+							<span class="tag">Directeur médical</span>
+							<span class="tag">Médecine médico-esthétique</span>
+						</div>
+
+						<div class="btn-row mt-3">
+							<a class="btn btn--ghost" href="./contact.html">Prendre rendez-vous</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ============ DR KANNAB-AYDA ============ -->
+		<section class="section section--paper">
+			<div class="wrap">
+				<div class="split">
+					<div class="split-media reveal">
+						<img src="./assets/equipe-kannab.jpg" alt="Dr George Kannab-Ayda" width="600" height="800">
 					</div>
 					<div class="split-body reveal">
 						<p class="eyebrow">Hormonothérapie</p>
@@ -198,11 +235,11 @@
 		</section>
 
 		<!-- ============ DR GOMEZ-IZQUIERDO ============ -->
-		<section class="section section--paper">
+		<section class="section">
 			<div class="wrap">
 				<div class="split split--reverse">
 					<div class="split-media reveal">
-						<img src="./assets/equipe-gomez.svg" alt="Dr Juan Camilo Gomez-Izquierdo" width="900" height="1200">
+						<img src="./assets/equipe-gomez.jpg" alt="Dr Juan Camilo Gomez-Izquierdo" width="600" height="800">
 					</div>
 					<div class="split-body reveal">
 						<p class="eyebrow">Greffe capillaire &amp; médecine esthétique</p>
@@ -233,11 +270,11 @@
 		</section>
 
 		<!-- ============ MARTINE FORTIER ============ -->
-		<section class="section">
+		<section class="section section--paper">
 			<div class="wrap">
 				<div class="split">
 					<div class="split-media reveal">
-						<img src="./assets/equipe-fortier.svg" alt="Martine Fortier, infirmière injectrice" width="900" height="1200">
+						<img src="./assets/equipe-fortier.jpg" alt="Martine Fortier, infirmière injectrice" width="600" height="800">
 					</div>
 					<div class="split-body reveal">
 						<p class="eyebrow">Injections &amp; PRF</p>
@@ -275,7 +312,7 @@
 		</section>
 
 		<!-- ============ CE QUI NOUS ENCADRE ============ -->
-		<section class="section section--paper">
+		<section class="section">
 			<div class="wrap">
 				<div class="section-head section-head--center reveal">
 					<p class="eyebrow eyebrow--center">Notre cadre de pratique</p>
@@ -312,7 +349,7 @@
 					<p class="lead">Une consultation, un diagnostic, un plan. Vous décidez ensuite — et pas avant.</p>
 					<div class="btn-row">
 						<a class="btn" href="./contact.html">Prendre rendez-vous</a>
-						<a class="btn btn--ghost" href="tel:+15140000000">514&nbsp;000-0000</a>
+						<a class="btn btn--ghost" href="tel:+15148878877">514&nbsp;887-8877</a>
 					</div>
 				</div>
 			</div>
@@ -324,7 +361,10 @@
 		<div class="wrap">
 			<div class="footer-top">
 				<div class="footer-brand">
-					<a href="./index.html" class="brand">Au <em>masculin</em></a>
+					<a href="./index.html" class="brand">
+						<img class="brand-mark" src="./assets/logo-am.svg" alt="" width="136" height="104">
+						<span class="brand-word">Au masculin<small>Clinique médico-esthétique</small></span>
+					</a>
 					<p>Clinique d'esthétique et de santé masculine à Montréal. Hormonothérapie, restauration capillaire et médecine esthétique, sous encadrement médical.</p>
 					<div class="socials">
 						<a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
@@ -356,10 +396,9 @@
 				<div class="footer-col">
 					<h4>Nous joindre</h4>
 					<ul>
-						<!-- COORDONNÉES À CONFIRMER -->
-						<li><a href="tel:+15140000000">514 000-0000</a></li>
+						<li><a href="tel:+15148878877">514 887-8877</a></li>
 						<li><a href="mailto:info@aumasculin.ca">info@aumasculin.ca</a></li>
-						<li><a href="./contact.html">Adresse à confirmer<br>Montréal, QC</a></li>
+						<li><a href="./contact.html">415, rue Sainte-Hélène<br>Montréal, QC</a></li>
 					</ul>
 				</div>
 			</div>

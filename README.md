@@ -1,8 +1,11 @@
 # Au masculin — site web
 
-Site vitrine de la clinique **Au masculin** (esthétique et santé masculine, Montréal).
+Site vitrine de la clinique **Au masculin** (clinique médico-esthétique pour hommes, Montréal).
 HTML / CSS / JS purs, aucune dépendance, aucun build. On dépose les fichiers sur
 l'hébergeur et c'est en ligne.
+
+Palette claire : marbre, blanc et or, écriture noire. Le fond marbre est une texture
+SVG générée (`assets/marbre.svg`), pas une photo.
 
 ---
 
@@ -10,21 +13,21 @@ l'hébergeur et c'est en ligne.
 
 ```
 .
-├── index.html                 Accueil
-├── hormonotherapie.html       Service 01 — TRT
+├── index.html                 Accueil (héros à carrousel, 4 services)
+├── hormonotherapie.html       Service 01 — TRT (parcours à distance)
 ├── prf-capillaire.html        Service 02 — PRF
 ├── greffe-de-cheveux.html     Service 03 — Greffe FUE + NeoGraft
-├── soins-esthetiques.html     Soins de l'homme (9 traitements)
-├── equipe.html                Les 3 professionnels
+├── soins-esthetiques.html     Service 04 — Soins de l'homme (9 traitements)
+├── equipe.html                Les 4 professionnels
 ├── contact.html               Formulaire + coordonnées + FAQ
 ├── 404.html
 ├── robots.txt · sitemap.xml · site.webmanifest
-├── assets/                    Images (SVG de remplacement pour l'instant)
+├── assets/                    Photos du client, logo et texture marbre
 ├── styles/
 │   ├── styles.css             Tout le design
 │   └── mediaqueries.css       Points de rupture uniquement
 └── scripts/
-    └── script.js              Menu, accordéons, révélation, formulaire
+    └── script.js              Menu, accordéons, révélation, carrousel, formulaire
 ```
 
 ---
@@ -33,35 +36,33 @@ l'hébergeur et c'est en ligne.
 
 ### 1. Coordonnées — cherchez `À CONFIRMER` dans les fichiers
 
-| Élément | Valeur actuelle (fictive) | Où |
+Le téléphone (514 887-8877), l'adresse (415, rue Sainte-Hélène, Montréal) et les heures
+(lundi au vendredi, 9 h à 17 h) sont ceux fournis par le client. Restent à confirmer :
+
+| Élément | Valeur actuelle | Où |
 |---|---|---|
-| Téléphone | `514 000-0000` / `tel:+15140000000` | toutes les pages |
 | Courriel | `info@aumasculin.ca` | toutes les pages |
-| Adresse | « Adresse à confirmer, Montréal, QC » | `contact.html`, pied de page, JSON-LD |
-| Heures | « heures à confirmer » | `contact.html` |
+| Code postal | absent du JSON-LD | `index.html`, `contact.html` |
 | Domaine | `https://www.aumasculin.ca` | balises `canonical`, `og:url`, `sitemap.xml` |
 | Réseaux sociaux | `href="#"` | pied de page, `contact.html` |
 
-Remplacement en un coup :
-
-```bash
-grep -rl '514 000-0000' . --include='*.html' | xargs sed -i '' 's/514 000-0000/VOTRE NUMÉRO/g'
-grep -rl '+15140000000' . --include='*.html' | xargs sed -i '' 's/+15140000000/+1514XXXXXXX/g'
-```
-
 ### 2. Images
 
-`assets/` contient des SVG de remplacement, dimensionnés au bon ratio. Remplacez-les
-par de vraies photos en gardant les mêmes noms **ou** changez l'extension dans le HTML.
+`assets/` contient les photos fournies par le client, extraites de `modifs.pdf`. Elles sont
+**basse résolution** : demandez les originaux avant toute refonte des visuels.
 
-| Fichier | Usage | Ratio |
+| Fichier | Usage | Format |
 |---|---|---|
-| `hero.svg` | Fond du héros d'accueil | 1600 × 1100 |
-| `trt.svg` · `prf.svg` · `greffe.svg` | Visuels de service | 4:5 |
-| `soins-homme.svg` · `clinique.svg` | Sections illustrées | 5:4 / 4:5 |
-| `equipe-kannab.svg` · `equipe-gomez.svg` · `equipe-fortier.svg` | Portraits | 3:4 |
-| `og-cover.svg` | Aperçu réseaux sociaux | 1200 × 630 — **à refaire en JPG/PNG**, plusieurs plateformes ignorent le SVG |
-| `favicon.svg` | Onglet du navigateur | — |
+| `hero-1/2/3.jpg` | Visuels déroulants du héros | 3:4 |
+| `equipe-lapointe/kannab/gomez/fortier.jpg` | Portraits détourés, cadrage uniforme | 3:4 |
+| `hormonotherapie-affiche.jpg` | Page TRT | 2:3 |
+| `prf-promo.jpg` · `prf-conditions.jpg` | Page PRF | 3:4 |
+| `greffe-avant-apres.jpg` | Avant / après NeoGraft | 850 × 550 |
+| `neograft.png` | Appareil détouré | PNG à canal alpha |
+| `greffe-complement.jpg` | Section « en complément » | 3:4 |
+| `og-cover.jpg` | Aperçu réseaux sociaux | 1200 × 630 |
+| `logo-am.svg` · `favicon.svg` · `marbre.svg` | Logo, icône, texture de fond | vectoriels |
+| `soins-homme.svg` | **Dernier gabarit** — à remplacer par une photo | 5:4 |
 
 ### 3. Formulaire de rendez-vous
 
@@ -77,8 +78,10 @@ Cherchez `PRIX À VALIDER` dans `soins-esthetiques.html`. Les montants de la sec
 « Soins esthétiques » proviennent de la page de référence fournie par le client et
 **doivent être confirmés** par la clinique avant publication.
 
-Les tarifs des trois services principaux sont ceux fournis par le client :
-TRT 325 $ / 175 $ · PRF 549 $ / 549 $ / 449 $ · Greffe à partir de 7 999 $.
+Les tarifs des services principaux sont ceux fournis par le client :
+TRT 325 $ / 175 $ · PRF 549,99 $ / 549,99 $ / 449,99 $ (100 $ de rabais à la 3ᵉ séance).
+**La greffe de cheveux ne porte aucun prix** : le montant se détermine en consultation,
+selon le nombre de greffons, et des méthodes de financement sont offertes.
 
 ---
 
@@ -93,7 +96,11 @@ TRT 325 $ / 175 $ · PRF 549 $ / 549 $ / 449 $ · Greffe à partir de 7 999 $.
   JSON-LD (`MedicalClinic`, `MedicalTherapy`, `MedicalProcedure`, `FAQPage`, `Physician`),
   `sitemap.xml` et `robots.txt`.
 - **Séparateurs de grille** : réalisés en bordures, pas en `gap` + fond opaque, pour
-  que les mêmes composants fonctionnent sur fond sombre comme sur fond clair.
+  que les mêmes composants fonctionnent sur marbre comme sur blanc.
+- **Carrousel du héros** : `[data-slider]` dans `index.html`, piloté par `scripts/script.js`.
+  Sans JS, la première image reste affichée ; l'animation se coupe si `prefers-reduced-motion`.
+- **Portraits de l'équipe** : détourés puis recomposés en 3:4 sur un fond uniforme, avec
+  un fondu du bas — les cadrages d'origine n'ont pas la même coupe.
 - **Mentions médicales** : chaque page de service porte un encadré `.notice` précisant
   que le contenu est informatif, que les résultats varient et qu'aucun traitement n'est
   amorcé sans évaluation et consentement éclairé. À faire relire par la clinique.

@@ -7,14 +7,14 @@
 	<meta name="description" content="Clinique d'esthétique masculine à Montréal : hormonothérapie (TRT), PRF capillaire, greffe de cheveux FUE et soins esthétiques pour homme. Consultation médicale avec bilan sanguin inclus.">
 	<meta name="author" content="Matlap Design">
 	<meta name="robots" content="index, follow">
-	<meta name="theme-color" content="#0B0C0E">
+	<meta name="theme-color" content="#FAF8F4">
 	<meta property="og:locale" content="fr_CA">
 	<meta property="og:site_name" content="Au masculin">
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://www.aumasculin.ca/">
 	<meta property="og:title" content="Au masculin | Clinique d'esthétique masculine — Montréal">
 	<meta property="og:description" content="Hormonothérapie, restauration capillaire et médecine esthétique pour homme. Une seule clinique, une équipe médicale.">
-	<meta property="og:image" content="https://www.aumasculin.ca/assets/og-cover.svg">
+	<meta property="og:image" content="https://www.aumasculin.ca/assets/og-cover.jpg">
 	<meta name="twitter:card" content="summary_large_image">
 	<link rel="canonical" href="https://www.aumasculin.ca/">
 	<link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
@@ -32,16 +32,22 @@
 		"name": "Au masculin",
 		"description": "Clinique d'esthétique et de santé masculine à Montréal : hormonothérapie (TRT), PRF capillaire, greffe de cheveux FUE et soins esthétiques pour homme.",
 		"url": "https://www.aumasculin.ca",
-		"image": "https://www.aumasculin.ca/assets/og-cover.svg",
-		"telephone": "+1-514-000-0000",
+		"image": "https://www.aumasculin.ca/assets/og-cover.jpg",
+		"telephone": "+1-514-887-8877",
 		"email": "info@aumasculin.ca",
 		"priceRange": "$$$",
 		"address": {
 			"@type": "PostalAddress",
-			"streetAddress": "Adresse à confirmer",
+			"streetAddress": "415, rue Sainte-Hélène",
 			"addressLocality": "Montréal",
 			"addressRegion": "QC",
 			"addressCountry": "CA"
+		},
+		"openingHoursSpecification": {
+			"@type": "OpeningHoursSpecification",
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+			"opens": "09:00",
+			"closes": "17:00"
 		},
 		"medicalSpecialty": ["Dermatology", "PlasticSurgery", "Endocrine"],
 		"availableService": [
@@ -59,7 +65,10 @@
 	<!-- ============ EN-TÊTE ============ -->
 	<header class="site-header">
 		<div class="wrap header-inner">
-			<a href="./index.html" class="brand" aria-label="Au masculin — accueil">Au <em>masculin</em></a>
+			<a href="./index.html" class="brand" aria-label="Au masculin — accueil">
+				<img class="brand-mark" src="./assets/logo-am.svg" alt="" width="136" height="104">
+				<span class="brand-word">Au masculin<small>Clinique médico-esthétique</small></span>
+			</a>
 
 			<nav aria-label="Navigation principale">
 				<ul class="nav">
@@ -82,8 +91,7 @@
 			</nav>
 
 			<div class="header-cta">
-				<!-- TÉLÉPHONE À CONFIRMER -->
-				<a class="header-tel" href="tel:+15140000000">514&nbsp;000-0000</a>
+				<a class="header-tel" href="tel:+15148878877">514&nbsp;887-8877</a>
 				<a class="btn btn--sm" href="./contact.html">Prendre rendez-vous</a>
 				<button class="burger" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Ouvrir le menu">
 					<span></span><span></span><span></span>
@@ -109,42 +117,50 @@
 		</ul>
 		<div class="drawer-foot">
 			<a class="btn" href="./contact.html">Prendre rendez-vous</a>
-			<a class="header-tel" href="tel:+15140000000">514 000-0000</a>
+			<a class="header-tel" href="tel:+15148878877">514 887-8877</a>
 		</div>
 	</div>
 
 	<main id="main">
 
 		<!-- ============ HÉROS ============ -->
-		<section class="hero">
+		<section class="hero hero--split">
 			<div class="hero-bg" aria-hidden="true"></div>
-			<img class="hero-media" src="./assets/hero.svg" alt="" aria-hidden="true" width="1600" height="1100">
 			<div class="hero-grid" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
 
 			<div class="wrap hero-inner">
-				<p class="eyebrow">Clinique d'esthétique masculine — Montréal</p>
+				<div>
+					<p class="eyebrow">Clinique médico-esthétique pour hommes — Montréal</p>
 
-				<h1 class="h-xl">
-					<span class="line"><span>L'énergie,</span></span>
-					<span class="line"><span>les cheveux,</span></span>
-					<span class="line"><span><em>l'assurance.</em></span></span>
-				</h1>
+					<h1 class="h-xl">
+						<span class="line"><span>L'énergie,</span></span>
+						<span class="line"><span>les cheveux,</span></span>
+						<span class="line"><span><em>l'assurance.</em></span></span>
+					</h1>
 
-				<div class="hero-copy">
-					<p class="lead">Hormonothérapie, restauration capillaire et médecine esthétique — pensées pour l'homme, encadrées par des médecins, réunies sous un même toit.</p>
+					<div class="hero-copy">
+						<p class="lead">Hormonothérapie, restauration capillaire et soins esthétiques pour l'homme, sous encadrement médical.</p>
+					</div>
+
+					<div class="btn-row hero-actions">
+						<a class="btn" href="./contact.html">Prendre rendez-vous</a>
+						<a class="btn btn--ghost" href="#services">Voir les services</a>
+					</div>
+
+					<ul class="hero-notes">
+						<li>Évaluation médicale</li>
+						<li>Résultats naturels</li>
+						<li>Suivi assuré</li>
+					</ul>
 				</div>
 
-				<div class="btn-row hero-actions">
-					<a class="btn" href="./contact.html">Réserver ma consultation</a>
-					<a class="btn btn--ghost" href="#services">Voir les services</a>
+				<!-- Visuels déroulants -->
+				<div class="hero-slider" data-slider>
+					<div class="hero-slide"><img src="./assets/hero-1.jpg" alt="Au masculin — votre confiance, notre expertise" width="640" height="854" fetchpriority="high"></div>
+					<div class="hero-slide"><img src="./assets/hero-2.jpg" alt="Homme photographié en studio, noir et blanc" width="640" height="854" loading="lazy"></div>
+					<div class="hero-slide"><img src="./assets/hero-3.jpg" alt="Comprendre l'hormonothérapie pour hommes" width="640" height="854" loading="lazy"></div>
+					<div class="hero-dots" role="tablist" aria-label="Visuels"></div>
 				</div>
-
-				<ul class="hero-stats" data-stagger>
-					<li class="reveal"><b>325<span class="unit">&nbsp;$</span></b><span>Consultation initiale TRT — bilan sanguin inclus</span></li>
-					<li class="reveal"><b>7&nbsp;999<span class="unit">&nbsp;$</span></b><span>Greffe FUE, à partir de — env. 2&nbsp;500 greffons</span></li>
-					<li class="reveal"><b>4<span class="unit">/10</span></b><span>Hommes de 45 ans et plus ont un faible taux de testostérone</span></li>
-					<li class="reveal"><b>1<span class="unit">&nbsp;équipe</span></b><span>Le même médecin du diagnostic au suivi</span></li>
-				</ul>
 			</div>
 		</section>
 
@@ -159,8 +175,8 @@
 		<section class="section" id="services">
 			<div class="wrap">
 				<div class="section-head reveal">
-					<p class="eyebrow">Nos trois piliers</p>
-					<h2 class="h-lg">Trois façons de<br><em class="serif-note bronze">reprendre le dessus</em></h2>
+					<p class="eyebrow">Nos quatre piliers</p>
+					<h2 class="h-lg">Quatre façons de<br><em class="serif-note bronze">reprendre le dessus</em></h2>
 					<p class="lead">Chaque parcours commence par une évaluation médicale complète. Pas de protocole générique : un plan bâti sur vos résultats, vos antécédents et vos objectifs.</p>
 				</div>
 
@@ -187,7 +203,7 @@
 						<h3>PRF<br>capillaire</h3>
 						<p>Vos propres plaquettes, concentrées en matrice de fibrine, réinjectées dans le cuir chevelu pour densifier et ralentir la chute.</p>
 						<div class="svc-meta">
-							<p class="svc-price">549&nbsp;$<small>Premier traitement</small></p>
+							<p class="svc-price">549,99&nbsp;$<small>Premier traitement</small></p>
 							<span class="arrow-link">Découvrir <svg width="18" height="8" viewBox="0 0 18 8" fill="none" aria-hidden="true"><path d="M0 4h16M12.5.5 16.5 4l-4 3.5" stroke="currentColor" stroke-width="1.3"/></svg></span>
 						</div>
 						<a class="svc-link" href="./prf-capillaire.html"><span>En savoir plus sur le PRF capillaire</span></a>
@@ -201,10 +217,24 @@
 						<h3>Greffe de<br>cheveux FUE</h3>
 						<p>Extraction folliculaire assistée par NeoGraft, implantation manuelle par le médecin. Permanent, sans cicatrice linéaire.</p>
 						<div class="svc-meta">
-							<p class="svc-price">7&nbsp;999&nbsp;$<small>À partir de</small></p>
+							<p class="svc-price">Contactez-nous<small>Un appel bref suffit</small></p>
 							<span class="arrow-link">Découvrir <svg width="18" height="8" viewBox="0 0 18 8" fill="none" aria-hidden="true"><path d="M0 4h16M12.5.5 16.5 4l-4 3.5" stroke="currentColor" stroke-width="1.3"/></svg></span>
 						</div>
 						<a class="svc-link" href="./greffe-de-cheveux.html"><span>En savoir plus sur la greffe de cheveux FUE</span></a>
+					</article>
+
+					<article class="svc reveal">
+						<p class="svc-num">04</p>
+						<div class="svc-icon" aria-hidden="true">
+							<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M20 5c6.6 0 12 5.4 12 12 0 8.4-6.6 13-12 18-5.4-5-12-9.6-12-18 0-6.6 5.4-12 12-12Z"/><path d="M15 18h10M20 13v10"/></svg>
+						</div>
+						<h3>Soins<br>esthétiques</h3>
+						<p>Neuromodulateur, comblement, double menton, sudation excessive, sculpture corporelle. Des gestes précis, sans convalescence.</p>
+						<div class="svc-meta">
+							<p class="svc-price">Sur évaluation<small>Selon le traitement</small></p>
+							<span class="arrow-link">Découvrir <svg width="18" height="8" viewBox="0 0 18 8" fill="none" aria-hidden="true"><path d="M0 4h16M12.5.5 16.5 4l-4 3.5" stroke="currentColor" stroke-width="1.3"/></svg></span>
+						</div>
+						<a class="svc-link" href="./soins-esthetiques.html"><span>En savoir plus sur les soins esthétiques pour homme</span></a>
 					</article>
 				</div>
 			</div>
@@ -258,8 +288,8 @@
 					</li>
 					<li class="reveal">
 						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
-						<b>Tout se fait sur place</b>
-						<span>Consultation, intervention et suivi dans la même clinique, avec la même équipe. Aucun renvoi ailleurs.</span>
+						<b>En clinique ou à distance</b>
+						<span>Les interventions se font à la clinique ; le suivi hormonal, lui, peut se faire à distance, avec une prise de sang près de chez vous.</span>
 					</li>
 					<li class="reveal">
 						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 12h4l2.5-7 5 14L17 12h4"/></svg>
@@ -275,7 +305,7 @@
 			<div class="wrap">
 				<div class="section-head reveal">
 					<p class="eyebrow">Le parcours</p>
-					<h2 class="h-lg">Quatre étapes,<br>zéro devinette</h2>
+					<h2 class="h-lg">Quatre étapes<br>simples</h2>
 				</div>
 
 				<ol class="steps" data-stagger>
@@ -326,13 +356,21 @@
 			<div class="wrap">
 				<div class="section-head reveal">
 					<p class="eyebrow">L'équipe</p>
-					<h2 class="h-lg">Des mains<br>qui savent où aller</h2>
-					<p class="lead">Trois professionnels, trois expertises complémentaires — et un même principe : aucun traitement sans évaluation préalable.</p>
+					<h2 class="h-lg">Notre<br><em class="serif-note bronze">équipe</em></h2>
+					<p class="lead">Quatre professionnels, quatre expertises complémentaires — et un même principe : aucun traitement sans évaluation préalable.</p>
 				</div>
 
 				<div class="team-grid" data-stagger>
 					<article class="member reveal">
-						<div class="member-photo"><img src="./assets/equipe-kannab.svg" alt="Dr George Kannab-Ayda" width="900" height="1200"></div>
+						<div class="member-photo"><img src="./assets/equipe-lapointe.jpg" alt="Dr Patrick Lapointe" width="600" height="800" loading="lazy"></div>
+						<p class="role">Directeur médical</p>
+						<h3>Dr Patrick Lapointe</h3>
+						<p class="credentials">Médecin — médecine médico-esthétique</p>
+						<p class="bio">Il dirige la clinique et veille à ce que chaque parcours reste encadré : évaluation, indications, sécurité et cohérence des plans de traitement.</p>
+					</article>
+
+					<article class="member reveal">
+						<div class="member-photo"><img src="./assets/equipe-kannab.jpg" alt="Dr George Kannab-Ayda" width="600" height="800" loading="lazy"></div>
 						<p class="role">Médecin — Hormonothérapie</p>
 						<h3>Dr George Kannab-Ayda</h3>
 						<p class="credentials">Médecin et pédiatre, médecine esthétique</p>
@@ -340,7 +378,7 @@
 					</article>
 
 					<article class="member reveal">
-						<div class="member-photo"><img src="./assets/equipe-gomez.svg" alt="Dr Juan Camilo Gomez-Izquierdo" width="900" height="1200"></div>
+						<div class="member-photo"><img src="./assets/equipe-gomez.jpg" alt="Dr Juan Camilo Gomez-Izquierdo" width="600" height="800" loading="lazy"></div>
 						<p class="role">Médecin — Greffe capillaire</p>
 						<h3>Dr Juan&nbsp;C. Gomez-Izquierdo</h3>
 						<p class="credentials">MD, Ph.&nbsp;D. (chirurgie expérimentale, McGill), CCMF</p>
@@ -348,7 +386,7 @@
 					</article>
 
 					<article class="member reveal">
-						<div class="member-photo"><img src="./assets/equipe-fortier.svg" alt="Martine Fortier, infirmière injectrice" width="900" height="1200"></div>
+						<div class="member-photo"><img src="./assets/equipe-fortier.jpg" alt="Martine Fortier, infirmière injectrice" width="600" height="800" loading="lazy"></div>
 						<p class="role">Infirmière injectrice</p>
 						<h3>Martine Fortier</h3>
 						<p class="credentials">Infirmière injectrice, médecine esthétique</p>
@@ -416,7 +454,7 @@
 					<p class="lead">Réservez votre évaluation initiale. On mesure, on vous explique, et vous décidez ensuite — sans engagement.</p>
 					<div class="btn-row">
 						<a class="btn" href="./contact.html">Prendre rendez-vous</a>
-						<a class="btn btn--ghost" href="tel:+15140000000">514&nbsp;000-0000</a>
+						<a class="btn btn--ghost" href="tel:+15148878877">514&nbsp;887-8877</a>
 					</div>
 				</div>
 			</div>
@@ -429,7 +467,10 @@
 		<div class="wrap">
 			<div class="footer-top">
 				<div class="footer-brand">
-					<a href="./index.html" class="brand">Au <em>masculin</em></a>
+					<a href="./index.html" class="brand">
+						<img class="brand-mark" src="./assets/logo-am.svg" alt="" width="136" height="104">
+						<span class="brand-word">Au masculin<small>Clinique médico-esthétique</small></span>
+					</a>
 					<p>Clinique d'esthétique et de santé masculine à Montréal. Hormonothérapie, restauration capillaire et médecine esthétique, sous encadrement médical.</p>
 					<div class="socials">
 						<a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
@@ -461,10 +502,9 @@
 				<div class="footer-col">
 					<h4>Nous joindre</h4>
 					<ul>
-						<!-- COORDONNÉES À CONFIRMER -->
-						<li><a href="tel:+15140000000">514 000-0000</a></li>
+						<li><a href="tel:+15148878877">514 887-8877</a></li>
 						<li><a href="mailto:info@aumasculin.ca">info@aumasculin.ca</a></li>
-						<li><a href="./contact.html">Adresse à confirmer<br>Montréal, QC</a></li>
+						<li><a href="./contact.html">415, rue Sainte-Hélène<br>Montréal, QC</a></li>
 					</ul>
 				</div>
 			</div>

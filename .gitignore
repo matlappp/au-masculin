@@ -7,6 +7,7 @@
 # iCloud
 *.icloud
 
-# Notes de travail internes (brief client, non destinées au dépôt)
+# Notes de travail internes (briefs client, non destinées au dépôt)
 infos.txt
 CLAUDE.md
+modifs.pdf

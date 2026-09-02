@@ -12,7 +12,7 @@
 	.assure { grid-template-columns: repeat(2, 1fr); }
 	.hero-stats { grid-template-columns: repeat(2, 1fr); }
 	.svc-grid { grid-template-columns: repeat(2, 1fr); }
-	.svc:last-child { grid-column: 1 / -1; min-height: 320px; }
+	.team-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* ---------- <= 1100px : navigation mobile ---------- */
@@ -31,6 +31,9 @@
 	.steps { grid-template-columns: repeat(2, 1fr); gap: 34px 28px; }
 	.team-grid { grid-template-columns: repeat(2, 1fr); }
 	.team-grid .member:last-child:nth-child(odd) { grid-column: 1 / -1; max-width: 420px; }
+	.hero--split .hero-inner { grid-template-columns: 1fr; }
+	.hero-slider { max-width: 460px; margin-top: 40px; }
+	.finance { grid-template-columns: 1fr; }
 	.pricing { grid-template-columns: 1fr; }
 	.price-card--wide { grid-column: auto; }
 	.treat-grid { grid-template-columns: 1fr; }
@@ -52,6 +55,7 @@
 	.svc-grid { grid-template-columns: 1fr; }
 	.svc,
 	.svc:last-child { min-height: 0; }
+	.media-plain img { max-height: 340px; }
 
 	.footer-top { grid-template-columns: repeat(2, 1fr); }
 	.hero-grid { grid-template-columns: repeat(2, 1fr); }
@@ -61,6 +65,7 @@
 /* ---------- <= 640px ---------- */
 @media (max-width: 640px) {
 	.hero { min-height: 0; padding-top: 128px; }
+	.hero--split { padding-bottom: 56px; }
 	.hero-stats { grid-template-columns: 1fr; }
 	.hero-stats li { padding: 22px 20px; }
 	.hero-media { -webkit-mask-image: linear-gradient(180deg, transparent 4%, #000 70%); mask-image: linear-gradient(180deg, transparent 4%, #000 70%); }
@@ -91,7 +96,8 @@
 /* ---------- <= 420px ---------- */
 @media (max-width: 420px) {
 	:root { --gut: 18px; }
-	.brand { font-size: .94rem; letter-spacing: .12em; }
+	.brand { font-size: .9rem; letter-spacing: .12em; gap: 9px; }
+	.brand-mark { height: 28px; }
 	.treat-top { flex-direction: column; gap: 10px; }
 }
 
