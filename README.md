@@ -16,7 +16,7 @@ SVG générée (`assets/marbre.svg`), pas une photo.
 ├── index.html                 Accueil (héros à carrousel, 4 services)
 ├── hormonotherapie.html       Service 01 — TRT (parcours à distance)
 ├── prf-capillaire.html        Service 02 — PRF
-├── greffe-de-cheveux.html     Service 03 — Greffe FUE + NeoGraft
+├── greffe-de-cheveux.html     Service 03 — Greffe de cheveux FUE + NeoGraft
 ├── soins-esthetiques.html     Service 04 — Soins de l'homme (9 traitements)
 ├── equipe.html                Les 4 professionnels
 ├── contact.html               Formulaire + coordonnées + FAQ
@@ -41,9 +41,9 @@ Le téléphone (514 887-8877), l'adresse (415, rue Sainte-Hélène, Montréal) e
 
 | Élément | Valeur actuelle | Où |
 |---|---|---|
-| Courriel | `info@aumasculin.ca` | toutes les pages |
+| Courriel | `info@cliniqueaumasculin.ca` | toutes les pages |
 | Code postal | absent du JSON-LD | `index.html`, `contact.html` |
-| Domaine | `https://www.aumasculin.ca` | balises `canonical`, `og:url`, `sitemap.xml` |
+| Domaine | `https://www.cliniqueaumasculin.ca` | balises `canonical`, `og:url`, `sitemap.xml` |
 | Réseaux sociaux | `href="#"` | pied de page, `contact.html` |
 
 ### 2. Images
@@ -75,12 +75,12 @@ et l'envoi se fera normalement — la validation côté client reste active dans
 ### 4. Tarifs à valider
 
 Cherchez `PRIX À VALIDER` dans `soins-esthetiques.html`. Les montants de la section
-« Soins esthétiques » proviennent de la page de référence fournie par le client et
+« Soins médico-esthétiques » proviennent de la page de référence fournie par le client et
 **doivent être confirmés** par la clinique avant publication.
 
 Les tarifs des services principaux sont ceux fournis par le client :
 TRT 325 $ / 175 $ · PRF 549,99 $ / 549,99 $ / 449,99 $ (100 $ de rabais à la 3ᵉ séance).
-**La greffe de cheveux ne porte aucun prix** : le montant se détermine en consultation,
+**La greffe de cheveux est affichée à partir de 7 999 $, PRF capillaire inclus** : le montant final se détermine en consultation,
 selon le nombre de greffons, et des méthodes de financement sont offertes.
 
 ---

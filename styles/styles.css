@@ -919,6 +919,13 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 	text-transform: uppercase;
 }
 
+/* Variante agrandie — met le rabais en évidence */
+.price-tag--lg {
+	padding: 10px 18px;
+	font-size: .86rem;
+	letter-spacing: .08em;
+}
+
 .price-card h3 { font-size: 1.18rem; text-transform: uppercase; letter-spacing: -.015em; }
 .price-card > p { margin-top: 12px; font-size: .9rem; color: var(--text-dim); }
 .section--paper .price-card > p { color: var(--text-ink-2); }
@@ -1562,6 +1569,24 @@ html:not(.js) .hero-slide:first-child,
 	font-weight: 600;
 	letter-spacing: .14em;
 	text-transform: uppercase;
+	color: var(--bronze-lo);
+}
+
+/* Variante agrandie — le montant du rabais prime sur le reste */
+.promo--lg {
+	flex-wrap: wrap;
+	gap: 8px;
+	padding: 12px 22px;
+	font-size: .78rem;
+	background: rgba(169, 130, 44, .14);
+}
+
+.promo--lg b {
+	font-family: var(--font-display);
+	font-size: clamp(1.15rem, 2.1vw, 1.5rem);
+	font-weight: 800;
+	letter-spacing: -.01em;
+	text-transform: none;
 	color: var(--bronze-lo);
 }
 
