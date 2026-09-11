@@ -48,13 +48,19 @@ Le téléphone (514 887-8877), l'adresse (415, rue Sainte-Hélène, Montréal) e
 
 ### 2. Images
 
-`assets/` contient les photos fournies par le client, extraites de `modifs.pdf`. Elles sont
-**basse résolution** : demandez les originaux avant toute refonte des visuels.
+`assets/` contient les photos fournies par le client. Les visuels de services, extraits de
+`modifs.pdf`, sont **basse résolution** : demandez les originaux avant toute refonte.
+
+Le cadrage des portraits détourés est **entièrement en CSS**, jamais dans le fichier : la variable
+`--portrait-debord` donne à l'image une hauteur supérieure à celle du cadre, le surplus sort par le
+bas et y est rogné par `overflow: hidden`, et `object-position: center bottom` colle le sujet au bas
+du cadre. 106 % par défaut, 150 % pour le Dr Kannab dont la photo cadre beaucoup plus large.
 
 | Fichier | Usage | Format |
 |---|---|---|
 | `hero-1/2/3.jpg` | Visuels déroulants du héros | 3:4 |
-| `equipe-lapointe/kannab/gomez/fortier.jpg` | Portraits détourés, cadrage uniforme | 3:4 |
+| `equipe-lapointe/kannab/gomez/fortier.png` | Portraits détourés — accueil et pages de service | PNG à canal alpha |
+| `equipe-…-original.jpg` | Photos d'origine, avec leur décor — page `equipe.html` | variable |
 | `hormonotherapie-affiche.jpg` | Page TRT | 2:3 |
 | `prf-promo.jpg` · `prf-conditions.jpg` | Page PRF | 3:4 |
 | `greffe-avant-apres.jpg` | Avant / après NeoGraft | 850 × 550 |

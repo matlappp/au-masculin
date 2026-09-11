@@ -41,6 +41,8 @@
 	--font-serif:   'Instrument Serif', Georgia, 'Times New Roman', serif;
 
 	/* Rythme */
+	--dd-largeur:      320px;  /* largeur des sous-menus de l'en-tête */
+	--portrait-debord: 106%;   /* rognage du bas des portraits détourés */
 	--wrap:        1240px;
 	--wrap-narrow: 780px;
 	--gut:         clamp(20px, 5vw, 56px);
@@ -417,11 +419,27 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .nav-item:hover .caret { transform: rotate(180deg); }
 
 /* Sous-menu */
+
+/* Pont invisible entre l'onglet et son panneau. Sans lui, traverser
+   lentement les 6 px qui les séparent fait perdre le survol de
+   .nav-item et referme le menu sous le curseur. Le pont couvre toute
+   la largeur du panneau pour tolérer un déplacement en diagonale ;
+   il reste à l'intérieur de l'en-tête, donc n'intercepte rien. */
+.nav-item.has-dd::after {
+	content: '';
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	width: var(--dd-largeur);
+	height: 8px;
+	transform: translateX(-50%);
+}
+
 .dd {
 	position: absolute;
 	top: calc(100% + 6px);
 	left: 50%;
-	width: 320px;
+	width: var(--dd-largeur);
 	padding: 10px;
 	transform: translate(-50%, 8px);
 	background: var(--ink-3);
@@ -830,6 +848,21 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .split-media img { width: 100%; height: 100%; object-fit: cover; }
 .split-media--wide { aspect-ratio: 5 / 4; }
 
+/* Le portrait du Dr Kannab est cadré beaucoup plus large que les trois
+   autres (pied de page jusqu'à la cuisse) : on rogne davantage le bas
+   pour ramener son buste à l'échelle du reste de l'équipe. */
+.member-photo img[src$="equipe-kannab.png"],
+.split-media--portrait img[src$="equipe-kannab.png"] { --portrait-debord: 150%; }
+
+/* Portraits détourés : même traitement que la grille d'équipe */
+.split-media--portrait img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: var(--portrait-debord);
+	object-position: center bottom;
+}
+
 .split-body h2 { margin-bottom: 22px; }
 
 /* Liste à puces bronze */
@@ -1061,11 +1094,21 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 	background: var(--paper-2);
 	border: 1px solid var(--line);
 }
-.member-photo img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1); transition: filter .5s var(--ease), transform .8s var(--ease); }
-.member:hover .member-photo img { filter: grayscale(0); transform: scale(1.03); }
-/* Les portraits sont détourés sur fond clair : pas de voile sombre. */
-.member-photo img { filter: none; }
-.member:hover .member-photo img { filter: none; }
+/* Les portraits sont détourés sur fond clair : pas de voile sombre.
+   Le sujet est collé au bas du cadre (object-position) et la hauteur
+   déborde légèrement : le surplus sort sous le cadre et y est rogné
+   par overflow: hidden, ce qui resserre le cadrage sur le buste. */
+.member-photo img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: var(--portrait-debord);
+	object-fit: cover;
+	object-position: center bottom;
+	transition: transform .8s var(--ease);
+}
+.member:hover .member-photo img { transform: scale(1.03); }
 .member .role {
 	font-size: .72rem;
 	font-weight: 600;
