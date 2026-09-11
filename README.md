@@ -56,6 +56,10 @@ Le cadrage des portraits détourés est **entièrement en CSS**, jamais dans le 
 bas et y est rogné par `overflow: hidden`, et `object-position: center bottom` colle le sujet au bas
 du cadre. 106 % par défaut, 150 % pour le Dr Kannab dont la photo cadre beaucoup plus large.
 
+Un cadre qui contient un portrait — détouré (`.split-media--portrait`) ou d'origine
+(`.split-media--tall`) — garde son format vertical même en une colonne. Les autres cadres passent
+en 3/2 sous 860 px ; un portrait aplati de la sorte sort la tête du sujet hors du cadre.
+
 | Fichier | Usage | Format |
 |---|---|---|
 | `hero-1/2/3.jpg` | Visuels déroulants du héros | 3:4 |
@@ -125,4 +129,4 @@ Puis <http://localhost:8000>.
 
 ---
 
-Site conçu par [Matlap Design](https://www.matlapdesign.com).
+Site conçu par [Matlap Design](https://matlap.ca).

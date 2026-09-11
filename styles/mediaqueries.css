@@ -51,6 +51,14 @@
 	.split--reverse .split-media { order: 0; }
 	.split-media { aspect-ratio: 3 / 2; }
 	.split-media--wide { aspect-ratio: 3 / 2; }
+	/* Les portraits, eux, gardent leur format vertical : aplatis en 3/2,
+	   le cadrage sort la tête du sujet hors du cadre. Largeur plafonnée
+	   pour qu'ils ne prennent pas toute la hauteur de l'écran.
+	   `width: 100%` est obligatoire : une marge automatique annule
+	   l'étirement d'un élément de grille, et le cadre — dont l'image est
+	   en position absolue — s'effondrerait à zéro. */
+	.split-media--tall,
+	.split-media--portrait { aspect-ratio: 4 / 5; width: 100%; max-width: 380px; margin-inline: auto; }
 
 	.svc-grid { grid-template-columns: 1fr; }
 	.svc,
