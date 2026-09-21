@@ -274,6 +274,45 @@
 		}
 	}
 
+	/* ---- Héros de l'accueil : fondu enchaîné des affiches ----
+	   Une affiche toutes les six secondes, en fondu. Le cadre suit le
+	   format de l'affiche affichée : les affiches du client n'ont pas
+	   toutes les mêmes proportions et aucune n'est rognée pour entrer
+	   dans le format d'une autre. Sans JS, la première reste seule. */
+	var affiches = document.querySelector('[data-affiches]');
+
+	if (affiches) {
+		var vues = Array.prototype.slice.call(affiches.querySelectorAll('img'));
+
+		if (vues.length > 1) {
+			var vue = 0;
+			var minuterie = null;
+
+			var montrer = function (i) {
+				vue = (i + vues.length) % vues.length;
+				vues.forEach(function (img, n) {
+					img.classList.toggle('is-active', n === vue);
+				});
+				affiches.style.setProperty('--affiche-ratio', vues[vue].dataset.ratio);
+				affiches.style.setProperty('--affiche-ratio-full', vues[vue].dataset.ratioFull);
+			};
+
+			var arreter = function () { window.clearInterval(minuterie); };
+			var demarrer = function () {
+				if (reduced) return;
+				arreter();
+				minuterie = window.setInterval(function () { montrer(vue + 1); }, 6000);
+			};
+
+			document.addEventListener('visibilitychange', function () {
+				if (document.hidden) { arreter(); } else { demarrer(); }
+			});
+
+			montrer(0);
+			demarrer();
+		}
+	}
+
 	/* ---- Année courante dans le pied de page ---- */
 	Array.prototype.forEach.call(document.querySelectorAll('[data-year]'), function (el) {
 		el.textContent = new Date().getFullYear();

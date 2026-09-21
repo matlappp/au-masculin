@@ -128,15 +128,33 @@
 			<div class="hero-bg" aria-hidden="true"></div>
 			<div class="hero-grid" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
 
-			<!-- L'affiche du client, bord à bord sous l'en-tête. Le rognage est
-			     entièrement en CSS (.hero-affiche), jamais dans le fichier : on
-			     ancre en haut et on ne coupe que le canapé du bas, pour que
-			     l'affiche reste entière — logotype, titre et accroche — à toutes
-			     les largeurs, téléphone compris. -->
-			<figure class="hero-affiche">
-				<img src="./assets/hero-affiche.jpg"
+			<!-- Les affiches du client, bord à bord sous l'en-tête, en fondu
+			     enchaîné toutes les six secondes. Le rognage est entièrement en
+			     CSS (.hero-affiche) : chaque affiche porte son propre format,
+			     le cadre s'y ajuste en douceur. Sans JS, la première reste
+			     affichée. -->
+			<figure class="hero-affiche" data-affiches>
+				<img class="is-active"
+				     src="./assets/hero-affiche.jpg"
 				     alt="Au masculin — prenez soin de votre apparence : une meilleure version de vous, sans compromis."
-				     width="1672" height="941" fetchpriority="high">
+				     width="1672" height="941"
+				     data-ratio="1672 / 720" data-ratio-full="1672 / 941"
+				     fetchpriority="high">
+				<img src="./assets/hero-affiche-hormonotherapie.jpg"
+				     alt="Hormonothérapie TRT — retrouvez votre énergie, réveillez votre potentiel."
+				     width="1672" height="617"
+				     data-ratio="1672 / 617" data-ratio-full="1672 / 617"
+				     decoding="async">
+				<img src="./assets/hero-affiche-prf.jpg"
+				     alt="PRF pour homme — renforce, stimule, révèle : 100 $ de rabais au troisième traitement."
+				     width="1672" height="616"
+				     data-ratio="1672 / 616" data-ratio-full="1672 / 616"
+				     decoding="async">
+				<img src="./assets/hero-affiche-greffe.jpg"
+				     alt="Greffe de cheveux FUE — à partir de 7 999 $, méthodes de financement offertes."
+				     width="1672" height="616"
+				     data-ratio="1672 / 616" data-ratio-full="1672 / 616"
+				     decoding="async">
 			</figure>
 
 			<div class="wrap hero-inner">

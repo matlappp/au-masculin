@@ -1625,20 +1625,30 @@ html:not(.js) .hero-slide:first-child,
    hauteur : c'est ce qui rend le cadrage identique à toute largeur
    d'écran, un `max-height` recadrerait différemment selon le
    moniteur et couperait le titre imprimé sur les grands écrans. */
+/* Pile d'affiches en fondu enchaîné. Le cadre prend le format de
+   l'affiche en cours (--affiche-ratio, posé par le JS) et glisse d'un
+   format à l'autre : les affiches du client n'ont pas toutes le même,
+   et on ne rogne aucune d'elles pour les faire entrer de force. */
 .hero-affiche {
 	position: relative;
 	margin: 0;
 	width: 100%;
-	aspect-ratio: 1672 / 720;
+	aspect-ratio: var(--affiche-ratio, 1672 / 720);
+	transition: aspect-ratio .9s ease;
 	overflow: hidden;
 	background: #0B0B0C;
 }
 .hero-affiche img {
+	position: absolute;
+	inset: 0;
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
 	object-position: center top;
+	opacity: 0;
+	transition: opacity 1.1s ease;
 }
+.hero-affiche img.is-active { opacity: 1; }
 /* Liseré or au pied de l'affiche, comme les autres cadres du site. */
 .hero-affiche::after {
 	content: '';
