@@ -81,6 +81,13 @@
 	/* Même spécificité que `.hero` ci-dessus : c'est l'ordre du fichier
 	   qui tranche, la règle doit donc être répétée ici. */
 	.hero--affiche { padding-top: 86px; }
+	/* Sur téléphone, plus de format imposé : le cadre prend la hauteur
+	   réelle du fichier et l'affiche s'affiche entière, canapé compris.
+	   Il faut rendre la main à l'image (`height: auto`), sinon le
+	   `height: 100%` de la règle de base la ferait s'effondrer dans un
+	   parent devenu sans hauteur. */
+	.hero-affiche { aspect-ratio: auto; }
+	.hero-affiche img { height: auto; }
 	.hero-stats { grid-template-columns: 1fr; }
 	.hero-stats li { padding: 22px 20px; }
 	.hero-media { -webkit-mask-image: linear-gradient(180deg, transparent 4%, #000 70%); mask-image: linear-gradient(180deg, transparent 4%, #000 70%); }
