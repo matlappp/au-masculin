@@ -123,33 +123,21 @@
 
 	<main id="main">
 
-		<!-- ============ HÉROS — AFFICHE PLEINE LARGEUR ============ -->
-		<section class="hero hero--affiche">
+		<!-- ============ HÉROS ============ -->
+		<section class="hero hero--split">
 			<div class="hero-bg" aria-hidden="true"></div>
 			<div class="hero-grid" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
 
-			<!-- L'affiche du client, bord à bord sous l'en-tête. Le rognage est
-			     entièrement en CSS (.hero-affiche), jamais dans le fichier :
-			     ancrage en haut pour garder le logotype et le titre de l'affiche,
-			     recadrage sur le sujet sous 640 px, où son texte devient illisible. -->
-			<figure class="hero-affiche">
-				<img src="./assets/hero-affiche.jpg"
-				     alt="Au masculin — prenez soin de votre apparence : une meilleure version de vous, sans compromis."
-				     width="1672" height="941" fetchpriority="high">
-			</figure>
-
 			<div class="wrap hero-inner">
-				<div class="hero-lede">
+				<div>
 					<p class="eyebrow">Clinique médico-esthétique pour hommes — Montréal</p>
 
-					<h1 class="h-lg">
+					<h1 class="h-xl">
 						<span class="line"><span>L'énergie,</span></span>
 						<span class="line"><span>les cheveux,</span></span>
 						<span class="line"><span><em>l'assurance.</em></span></span>
 					</h1>
-				</div>
 
-				<div class="hero-aside">
 					<div class="hero-copy">
 						<p class="lead">Hormonothérapie, restauration capillaire et soins médico-esthétiques pour l'homme, sous encadrement médical.</p>
 					</div>
@@ -164,6 +152,14 @@
 						<li>Résultats naturels</li>
 						<li>Suivi assuré</li>
 					</ul>
+				</div>
+
+				<!-- Visuels déroulants -->
+				<div class="hero-slider" data-slider>
+					<div class="hero-slide"><img src="./assets/hero-1.jpg" alt="Au masculin — votre confiance, notre expertise" width="640" height="854" fetchpriority="high"></div>
+					<div class="hero-slide"><img src="./assets/hero-2.jpg" alt="Homme photographié en studio, noir et blanc" width="640" height="854" loading="lazy"></div>
+					<div class="hero-slide"><img src="./assets/hero-3.jpg" alt="Comprendre l'hormonothérapie pour hommes" width="640" height="854" loading="lazy"></div>
+					<div class="hero-dots" role="tablist" aria-label="Visuels"></div>
 				</div>
 			</div>
 		</section>

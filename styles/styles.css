@@ -1605,6 +1605,61 @@ html:not(.js) .hero-slide:first-child,
 }
 
 /* ============================================================
+   HÉROS À AFFICHE  (variante d'accueil, index.html)
+   L'affiche fournie par le client tient toute la largeur, juste
+   sous l'en-tête ; le titre, l'accroche et les boutons se posent
+   dessous, sur deux colonnes.
+   ============================================================ */
+.hero--affiche {
+	display: block;
+	min-height: 0;
+	padding-top: 96px;                      /* en-tête au repos : 84 px */
+	padding-bottom: clamp(48px, 6vw, 88px);
+}
+
+/* Bord à bord : l'affiche sort de la gouttière du .wrap.
+   Le rognage est en CSS, jamais une retaille du fichier.
+   Le fichier fait 1672 x 941 et son texte s'arrête à y = 674 ; on
+   garde donc 720 px de haut — logotype, titre et accroche intacts,
+   le canapé du bas tombe. Un format fixe plutôt qu'un plafond de
+   hauteur : c'est ce qui rend le cadrage identique à toute largeur
+   d'écran, un `max-height` recadrerait différemment selon le
+   moniteur et couperait le titre imprimé sur les grands écrans. */
+.hero-affiche {
+	position: relative;
+	margin: 0;
+	width: 100%;
+	aspect-ratio: 1672 / 720;
+	overflow: hidden;
+	background: #0B0B0C;
+}
+.hero-affiche img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center top;
+}
+/* Liseré or au pied de l'affiche, comme les autres cadres du site. */
+.hero-affiche::after {
+	content: '';
+	position: absolute;
+	inset: auto 0 0;
+	height: 1px;
+	background: linear-gradient(90deg, transparent, rgba(201, 162, 74, .72), transparent);
+}
+
+.hero--affiche .hero-inner {
+	display: grid;
+	grid-template-columns: 1.05fr .95fr;
+	gap: clamp(26px, 4vw, 64px);
+	align-items: end;
+	margin-top: clamp(38px, 5vw, 66px);
+}
+.hero--affiche .hero-copy { max-width: 52ch; margin-top: 0; }
+.hero--affiche .hero-actions { margin-top: 28px; }
+.hero--affiche .hero-notes { margin-top: 26px; }
+
+/* ============================================================
    PROMOTION / FINANCEMENT
    ============================================================ */
 .promo {
