@@ -81,14 +81,6 @@
 	/* Même spécificité que `.hero` ci-dessus : c'est l'ordre du fichier
 	   qui tranche, la règle doit donc être répétée ici. */
 	.hero--affiche { padding-top: 86px; }
-	/* L'affiche porte son propre titre, illisible à cette largeur : on
-	   recadre sur le sujet et le <h1> HTML prend le relais. Le format
-	   est fixe et sans plafond — c'est ce qui garde le cadrage stable
-	   quelle que soit la largeur de l'écran. Le texte imprimé s'arrête
-	   à x = 834 sur 1672 : à 94 % le cadre démarre après, sinon on voit
-	   dépasser la fin de « APPARENCE. » sur le bord gauche. */
-	.hero-affiche { aspect-ratio: 4 / 5; }
-	.hero-affiche img { object-position: 94% center; }
 	.hero-stats { grid-template-columns: 1fr; }
 	.hero-stats li { padding: 22px 20px; }
 	.hero-media { -webkit-mask-image: linear-gradient(180deg, transparent 4%, #000 70%); mask-image: linear-gradient(180deg, transparent 4%, #000 70%); }
