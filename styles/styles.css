@@ -852,6 +852,17 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
    leur format même quand les blocs passent en une colonne. */
 .split-media--tall { aspect-ratio: 4 / 5; }
 
+/* Photos de visage (pas un portrait détouré, une vraie photo) : le cadre
+   prend le format du fichier — 3/4 — pour que la chevelure et le bas du
+   visage tiennent tous les deux, et le cadrage part du haut. Un cadre plus
+   large rogne le sujet par le milieu et ne montre plus que le front. */
+.split-media--visage { aspect-ratio: 3 / 4; }
+.split-media--visage img { object-position: center top; }
+
+/* Même raison sur un cadre horizontal : la tête est haut dans l'image, donc
+   le surplus doit toujours se prendre en bas. */
+.split-media--wide img[src$="greffe-complement.jpg"] { object-position: center top; }
+
 /* Le portrait du Dr Kannab est cadré beaucoup plus large que les trois
    autres (pied de page jusqu'à la cuisse) : on rogne davantage le bas
    pour ramener son buste à l'échelle du reste de l'équipe. */

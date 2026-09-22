@@ -63,6 +63,14 @@
 	   en position absolue — s'effondrerait à zéro. */
 	.split-media--tall,
 	.split-media--portrait { aspect-ratio: 4 / 5; width: 100%; max-width: 380px; margin-inline: auto; }
+	/* Les photos de visage non plus : aplaties en 3/2, il ne reste que le
+	   front du sujet. On garde le format du fichier. */
+	.split-media--visage { aspect-ratio: 3 / 4; width: 100%; max-width: 380px; margin-inline: auto; }
+
+	/* Le visuel avant/après est collant sur écran large, le texte défile à
+	   côté. En une colonne, il défilerait par-dessus le texte placé sous
+	   lui : il reprend donc sa place en haut du bloc. */
+	.split--figure .figure-band { position: static; }
 
 	.svc-grid { grid-template-columns: 1fr; }
 	.svc,

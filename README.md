@@ -56,20 +56,24 @@ Le cadrage des portraits détourés est **entièrement en CSS**, jamais dans le 
 bas et y est rogné par `overflow: hidden`, et `object-position: center bottom` colle le sujet au bas
 du cadre. 106 % par défaut, 150 % pour le Dr Kannab dont la photo cadre beaucoup plus large.
 
-Un cadre qui contient un portrait — détouré (`.split-media--portrait`) ou d'origine
-(`.split-media--tall`) — garde son format vertical même en une colonne. Les autres cadres passent
-en 3/2 sous 860 px ; un portrait aplati de la sorte sort la tête du sujet hors du cadre.
+Un cadre qui contient un portrait — détouré (`.split-media--portrait`), d'origine
+(`.split-media--tall`) ou une photo de visage (`.split-media--visage`) — garde son format vertical
+même en une colonne. Les autres cadres passent en 3/2 sous 860 px ; un portrait aplati de la sorte
+sort la tête du sujet hors du cadre.
+
+Les photos de visage sont cadrées **par le haut** (`object-position: center top`) : la tête y est
+haut dans l'image, donc le surplus doit toujours se prendre en bas, jamais dans la chevelure.
 
 | Fichier | Usage | Format |
 |---|---|---|
 | `hero-1/2/3.jpg` | Visuels déroulants du héros | 3:4 |
 | `equipe-lapointe/kannab/gomez/fortier.png` | Portraits détourés — accueil et pages de service | PNG à canal alpha |
 | `equipe-…-original.jpg` | Photos d'origine, avec leur décor — page `equipe.html` | variable |
-| `hormonotherapie-affiche.jpg` | Page TRT | 2:3 |
+| `hormonotherapie-photo.jpg` | Page TRT | 3:4 |
 | `prf-promo.jpg` · `prf-conditions.jpg` | Page PRF | 3:4 |
 | `greffe-avant-apres.jpg` | Avant / après NeoGraft | 850 × 550 |
 | `neograft.png` | Appareil détouré | PNG à canal alpha |
-| `greffe-complement.jpg` | Section « en complément » | 3:4 |
+| `greffe-complement.jpg` | Section « en complément » | 5:4 |
 | `og-cover.jpg` | Aperçu réseaux sociaux | 1200 × 630 |
 | `logo-am.svg` · `favicon.svg` · `marbre.svg` | Logo, icône, texture de fond | vectoriels |
 | `soins-homme.svg` | **Dernier gabarit** — à remplacer par une photo | 5:4 |
