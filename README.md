@@ -76,7 +76,10 @@ haut dans l'image, donc le surplus doit toujours se prendre en bas, jamais dans 
 | `neograft.png` | Appareil détouré | PNG à canal alpha |
 | `greffe-complement.webp` | Section « en complément » de la page Greffe, cadre 3:4 rogné par le bas | 1170 × 1950 |
 | `og-cover.jpg` | Aperçu réseaux sociaux | 1200 × 630 |
-| `logo-am.svg` · `favicon.svg` · `marbre.svg` | Logo, icône, texture de fond | vectoriels |
+| `logo-monogramme.svg` · `logo-mot-signe.svg` | Logo du client (monogramme AM, mot-signe « AU MASCULIN »), en-tête et pied de page | vectoriels, noir `#1A1A1A` |
+| `logo-au-masculin.png` | Logo empilé sans slogan — `logo` du JSON-LD | 800 × 291 |
+| `favicon.ico` · `favicon.svg` · `apple-touch-icon.png` · `icon-192/512.png` · `icon-maskable-512.png` | Icônes du navigateur, de l'écran d'accueil et du manifeste | 32 · vectoriel · 180 · 192 · 512 |
+| `marbre.svg` | Texture de fond | vectoriel |
 
 ### 3. Formulaire de rendez-vous
 

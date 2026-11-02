@@ -131,9 +131,16 @@
 /* ---------- <= 420px ---------- */
 @media (max-width: 420px) {
 	:root { --gut: 18px; }
-	.brand { font-size: .9rem; letter-spacing: .12em; gap: 9px; }
-	.brand-mark { height: 28px; }
+	.site-header .brand { --logo: 33px; }
 	.treat-top { flex-direction: column; gap: 10px; }
+}
+
+/* ---------- <= 360px ---------- */
+@media (max-width: 360px) {
+	/* Le logo horizontal ne laisse plus la place au bouton du tiroir :
+	   on le réduit, et le sous-titre avec lui pour qu'il ne dépasse pas le mot-signe. */
+	.site-header .brand { --logo: 28px; }
+	.site-header .brand-word small { font-size: .44rem; letter-spacing: .1em; margin-right: -.1em; }
 }
 
 /* ---------- Écrans larges ---------- */

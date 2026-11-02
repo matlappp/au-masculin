@@ -357,37 +357,52 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 }
 .site-header.is-stuck .header-inner { height: 68px; }
 
-/* Logotype : monogramme (SVG sans fond) + mot-signe */
+/* Logo du client : monogramme AM + mot-signe « AU MASCULIN » (SVG noirs du kit).
+   Le slogan imprimé du kit dit encore « médico-esthétique » : le sous-titre reste
+   donc du HTML, centré sous le mot-signe comme dans le logo horizontal du kit.
+   --logo fixe la hauteur du monogramme, tout le reste en découle. */
 .brand {
+	--logo: 38px;
 	display: inline-flex;
 	align-items: center;
-	gap: 12px;
-	font-family: var(--font-display);
-	font-size: 1.02rem;
-	font-weight: 700;
-	letter-spacing: .17em;
-	text-transform: uppercase;
-	color: var(--text);
+	gap: calc(var(--logo) * .4);
 	flex: none;
-	transition: opacity .25s var(--ease);
+	transform-origin: left center;
+	transition: opacity .25s var(--ease), transform .35s var(--ease);
 }
-.brand-mark {
-	width: auto;
-	height: 34px;
-	flex: none;
-	transition: height .35s var(--ease);
+.brand-mark { width: auto; height: var(--logo); flex: none; }
+/* Horizontal : le mot-signe s'aligne sur le haut du monogramme, le sous-titre sur le bas */
+.brand-word {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	height: var(--logo);
 }
-.site-header.is-stuck .brand-mark { height: 28px; }
-.brand-word { display: flex; flex-direction: column; gap: 3px; line-height: 1; }
+.brand-name { width: auto; height: calc(var(--logo) * .615); }
 .brand-word small {
 	font-family: var(--font-body);
 	font-size: .5rem;
 	font-weight: 500;
-	letter-spacing: .17em;
+	line-height: 1;
+	letter-spacing: .15em;
+	margin-right: -.15em;
+	text-transform: uppercase;
+	white-space: nowrap;
 	color: var(--bronze);
 }
+.site-header.is-stuck .brand { transform: scale(.88); }
 .brand:hover { opacity: .72; }
-.brand:hover { color: var(--bronze); }
+
+/* Empilé (pied de page) : monogramme au-dessus du mot-signe, proportions du kit */
+.brand--stack {
+	--logo: 54px;
+	flex-direction: column;
+	gap: calc(var(--logo) * .175);
+}
+.brand--stack .brand-word { height: auto; gap: calc(var(--logo) * .19); }
+.brand--stack .brand-name { height: calc(var(--logo) * .46); }
+.brand--stack .brand-word small { font-size: .56rem; }
 
 /* Navigation */
 .nav { display: flex; align-items: center; gap: 4px; }
@@ -1455,7 +1470,6 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 	gap: clamp(30px, 4vw, 56px);
 	padding-bottom: clamp(48px, 5vw, 72px);
 }
-.footer-brand .brand { font-size: 1.25rem; }
 .footer-brand p { margin-top: 20px; max-width: 34ch; font-size: .92rem; color: var(--text-dim); }
 
 .footer-col h4 {
