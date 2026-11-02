@@ -860,9 +860,10 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .split-media--visage { aspect-ratio: 3 / 4; }
 .split-media--visage img { object-position: center top; }
 
-/* Même raison sur un cadre horizontal : la tête est haut dans l'image, donc
-   le surplus doit toujours se prendre en bas. */
-.split-media--wide img[src$="greffe-complement.jpg"] { object-position: center top; }
+/* La photo de l'hormonothérapie est horizontale : dans le cadre 3/4, on n'en
+   voit que la moitié centrale. Le sujet est assis à droite de l'image — le
+   cadrage glisse vers lui pour centrer son visage. */
+.split-media--visage img[src$="hormonotherapie-photo.jpg"] { object-position: 68% top; }
 
 /* Le portrait du Dr Kannab est cadré beaucoup plus large que les trois
    autres (pied de page jusqu'à la cuisse) : on rogne davantage le bas

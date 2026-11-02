@@ -69,12 +69,12 @@ haut dans l'image, donc le surplus doit toujours se prendre en bas, jamais dans 
 | `hero-1/2/3.jpg` | Visuels déroulants du héros | 3:4 |
 | `equipe-kannab/gomez/fortier.png` | Portraits détourés — accueil et pages de service | PNG à canal alpha |
 | `equipe-…-original.jpg` | Photos d'origine, avec leur décor — page `equipe.html` | variable |
-| `hormonotherapie-photo.jpg` | Page TRT | 3:4 |
+| `hormonotherapie-photo.jpg` | Page TRT — photo horizontale, rognée en 3:4 par le CSS (`object-position: 68% top`) ; aussi `og:image` | 1369 × 913 |
 | `prf-promo.jpg` · `prf-conditions.jpg` | Page PRF | 3:4 |
 | `greffe-avant-apres.webp` | Avant / après NeoGraft | 1556 × 814 |
 | `greffe-avant-apres.jpg` | Même visuel en JPEG, pour l'`og:image` seulement | 1200 × 627 |
 | `neograft.png` | Appareil détouré | PNG à canal alpha |
-| `greffe-complement.jpg` | Section « en complément » | 5:4 |
+| `greffe-complement.webp` | Section « en complément » de la page Greffe, cadre 3:4 rogné par le bas | 1170 × 1950 |
 | `og-cover.jpg` | Aperçu réseaux sociaux | 1200 × 630 |
 | `logo-am.svg` · `favicon.svg` · `marbre.svg` | Logo, icône, texture de fond | vectoriels |
 
