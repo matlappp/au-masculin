@@ -1,6 +1,6 @@
 # Au masculin — site web
 
-Site vitrine de la clinique **Au masculin** (clinique médico-esthétique pour hommes, Montréal).
+Site vitrine de la clinique **Au masculin** (clinique de bien-être pour hommes, Montréal).
 HTML / CSS / JS purs, aucune dépendance, aucun build. On dépose les fichiers sur
 l'hébergeur et c'est en ligne.
 
@@ -13,12 +13,12 @@ SVG générée (`assets/marbre.svg`), pas une photo.
 
 ```
 .
-├── index.html                 Accueil (héros à carrousel, 4 services)
+├── index.html                 Accueil (héros à affiches en fondu, 3 services)
+├── index2.html                Accueil, variante à carrousel (comparaison, hors sitemap)
 ├── hormonotherapie.html       Service 01 — TRT (parcours à distance)
 ├── prf-capillaire.html        Service 02 — PRF
 ├── greffe-de-cheveux.html     Service 03 — Greffe de cheveux FUE + NeoGraft
-├── soins-esthetiques.html     Service 04 — Soins de l'homme (9 traitements)
-├── equipe.html                Les 4 professionnels
+├── equipe.html                Les 3 professionnels
 ├── contact.html               Formulaire + coordonnées + FAQ
 ├── 404.html
 ├── robots.txt · sitemap.xml · site.webmanifest
@@ -67,16 +67,16 @@ haut dans l'image, donc le surplus doit toujours se prendre en bas, jamais dans 
 | Fichier | Usage | Format |
 |---|---|---|
 | `hero-1/2/3.jpg` | Visuels déroulants du héros | 3:4 |
-| `equipe-lapointe/kannab/gomez/fortier.png` | Portraits détourés — accueil et pages de service | PNG à canal alpha |
+| `equipe-kannab/gomez/fortier.png` | Portraits détourés — accueil et pages de service | PNG à canal alpha |
 | `equipe-…-original.jpg` | Photos d'origine, avec leur décor — page `equipe.html` | variable |
 | `hormonotherapie-photo.jpg` | Page TRT | 3:4 |
 | `prf-promo.jpg` · `prf-conditions.jpg` | Page PRF | 3:4 |
-| `greffe-avant-apres.jpg` | Avant / après NeoGraft | 850 × 550 |
+| `greffe-avant-apres.webp` | Avant / après NeoGraft | 1556 × 814 |
+| `greffe-avant-apres.jpg` | Même visuel en JPEG, pour l'`og:image` seulement | 1200 × 627 |
 | `neograft.png` | Appareil détouré | PNG à canal alpha |
 | `greffe-complement.jpg` | Section « en complément » | 5:4 |
 | `og-cover.jpg` | Aperçu réseaux sociaux | 1200 × 630 |
 | `logo-am.svg` · `favicon.svg` · `marbre.svg` | Logo, icône, texture de fond | vectoriels |
-| `soins-homme.svg` | **Dernier gabarit** — à remplacer par une photo | 5:4 |
 
 ### 3. Formulaire de rendez-vous
 
@@ -86,13 +86,9 @@ n'en a pas, le JS affiche une confirmation visuelle sans rien envoyer.
 Ajoutez l'`action` du service choisi (Formspree, Netlify Forms, Web3Forms, script PHP)
 et l'envoi se fera normalement — la validation côté client reste active dans les deux cas.
 
-### 4. Tarifs à valider
+### 4. Tarifs
 
-Cherchez `PRIX À VALIDER` dans `soins-esthetiques.html`. Les montants de la section
-« Soins médico-esthétiques » proviennent de la page de référence fournie par le client et
-**doivent être confirmés** par la clinique avant publication.
-
-Les tarifs des services principaux sont ceux fournis par le client :
+Les tarifs des services sont ceux fournis par le client :
 TRT 325 $ / 175 $ · PRF 549,99 $ / 549,99 $ / 449,99 $ (100 $ de rabais à la 3ᵉ séance).
 **La greffe de cheveux est affichée à partir de 7 999 $, PRF capillaire inclus** : le montant final se détermine en consultation,
 selon le nombre de greffons, et des méthodes de financement sont offertes.
@@ -123,10 +119,20 @@ selon le nombre de greffons, et des méthodes de financement sont offertes.
 
 ## Développement local
 
-Aucun outil requis. Pour un aperçu avec des chemins propres :
+Aucun outil requis. Les liens internes n'ont **pas d'extension** (`./equipe`, pas
+`./equipe.html`) : GitHub Pages sert `equipe.html` à l'adresse `/equipe`.
+`python3 -m http.server` ne le fait pas — pour un aperçu local où les liens fonctionnent :
 
 ```bash
-python3 -m http.server 8000
+python3 -c "
+import http.server as h, os
+class H(h.SimpleHTTPRequestHandler):
+    def send_head(self):
+        p = self.translate_path(self.path.split('?')[0])
+        if not os.path.exists(p) and os.path.exists(p + '.html'):
+            self.path = self.path.split('?')[0] + '.html'
+        return super().send_head()
+h.test(H, port=8000)"
 ```
 
 Puis <http://localhost:8000>.

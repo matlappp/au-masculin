@@ -403,6 +403,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 	font-weight: 500;
 	letter-spacing: .02em;
 	color: var(--text-dim);
+	white-space: nowrap;
 }
 .nav-link:hover,
 .nav-item.is-open > .nav-link { color: var(--text); }
@@ -756,7 +757,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
    ============================================================ */
 .svc-grid {
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
+	grid-template-columns: repeat(3, 1fr);
 	border-top: 1px solid var(--line);
 	border-left: 1px solid var(--line);
 }
@@ -1099,7 +1100,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
    ============================================================ */
 .team-grid {
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
+	grid-template-columns: repeat(3, 1fr);
 	gap: clamp(24px, 3vw, 40px);
 }
 .member { display: flex; flex-direction: column; }

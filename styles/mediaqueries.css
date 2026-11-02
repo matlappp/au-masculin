@@ -7,6 +7,11 @@
 
 /* ---------- <= 1180px ---------- */
 @media (max-width: 1180px) {
+	/* Le sous-titre « Clinique de bien-être pour hommes » élargit la marque :
+	   juste avant le tiroir (1100 px), le menu n'y tenait plus sur une ligne. */
+	.header-inner { gap: 18px; }
+	.nav-link { padding-inline: 11px; }
+	.nav-link[aria-current="page"]::after { left: 11px; right: 11px; }
 	.footer-top { grid-template-columns: 1.4fr 1fr 1fr; }
 	.footer-brand { grid-column: 1 / -1; }
 	.assure { grid-template-columns: repeat(2, 1fr); }
@@ -14,8 +19,9 @@
 	/* En deçà, la colonne de droite ne tient plus les deux boutons
 	   côte à côte : le bandeau sous l'affiche passe en une colonne. */
 	.hero--affiche .hero-inner { grid-template-columns: 1fr; gap: 30px; }
-	.svc-grid { grid-template-columns: repeat(2, 1fr); }
-	.team-grid { grid-template-columns: repeat(2, 1fr); }
+	/* Trois services, trois membres : les deux grilles gardent leurs trois
+	   colonnes ici. Passées à deux, la troisième carte resterait seule sur
+	   sa rangée — les services passent directement à une colonne sous 860 px. */
 }
 
 /* ---------- <= 1100px : navigation mobile ---------- */
